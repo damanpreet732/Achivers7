@@ -1,0 +1,25 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.* ;
+class GFG {
+    static int safe (int n,int k)
+    {
+        if(n==1)
+        {
+            return 1; 
+        }
+        return (safe(n-1,k)+k-1)%n+1;
+    }
+	public static void main (String[] args) {
+	    Scanner input = new Scanner (System.in);
+	    int t = input.nextInt();
+	    while(t!=0)
+	    {
+	        int n = input.nextInt();
+	        int k = input.nextInt();
+	        System.out.println(safe(n,k));
+	        t-- ;
+	    }
+	}
+}
