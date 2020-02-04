@@ -1,0 +1,29 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.* ;
+class GFG {
+    static int maxA (int n,int count,int ca)
+    {
+        if(n == 0)
+        {
+            return count;
+        }
+        if(count >= 3 && n>=3)
+        {
+            return maxA(n-3,count*2,count);
+        }
+        return maxA(n-1,count+ca,ca);
+    }
+	public static void main (String[] args) {
+	    Scanner input = new Scanner (System.in);
+	    int t = input.nextInt();
+	    while(t!=0)
+	    {
+	        int n = input.nextInt();
+	        //int k = input.nextInt();
+	        System.out.println(maxA(n,0,1));
+	        t-- ;
+	    }
+	}
+}
